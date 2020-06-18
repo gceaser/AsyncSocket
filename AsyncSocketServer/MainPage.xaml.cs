@@ -11,10 +11,12 @@ namespace AsyncSocketServer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        
+        private string is_IPAddress;
+
         public MainPage()
         {
             InitializeComponent();
+            is_IPAddress = App.IPV4Address;
             AsynchronousSocketListener.MessageReceivedComplete += App_MessageReceivedComplete;
             AsynchronousSocketListener.ResponseMessageSent += App_ResponseMessageSent;
         }
@@ -48,16 +50,24 @@ namespace AsyncSocketServer
             Task.Run(async () =>
             {
 
-                await AsynchronousSocketListener.StartListening(IPAddress.Parse("fe80::cda4:ea52:29f5:2c7c"), 8080);
+                await AsynchronousSocketListener.StartListening(IPAddress.Parse(is_IPAddress), 8080);
 
-                //await AsynchronousSocketListener.StartListening(IPAddress.Parse("192.168.1.19"), 8080);
             });
 
-            //lblIPAddress.Text = "Listening on 192.168.1.19";
-            //lblPort.Text = "Port: 8080";
+            lblIPAddress.Text = "Listening on " + is_IPAddress;
+            lblPort.Text = "Port: " + App.Port.ToString() ;
+        }
 
-            lblIPAddress.Text = "Listening on fe80::cda4:ea52:29f5:2c7c";
-            lblPort.Text = "Port: 8080";
+        private void swIPV6_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (swIPV6.IsToggled)
+            {
+                is_IPAddress = App.IPV6Address;
+            }
+            else
+            {
+                is_IPAddress = App.IPV4Address;
+            }
         }
     }
 }

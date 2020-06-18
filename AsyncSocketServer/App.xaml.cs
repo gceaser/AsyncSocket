@@ -8,7 +8,7 @@ namespace AsyncSocketServer
     public partial class App : Application
     {
         public const string IPV4Address = "192.168.1.19";
-        public const string IPV6Address = "192.168.1.19";
+        public const string IPV6Address = "fe80::cda4:ea52:29f5:2c7c";
         public const int Port = 8080;
 
         public App()

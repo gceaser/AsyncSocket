@@ -18,6 +18,10 @@
         </StackLayout>
 
         <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="EndAndExpand">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,16">
+                <Label x:Name="lblUseV6" Text="Use IP V6" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Switch x:Name="swIPV6" IsToggled="False" Toggled="swIPV6_Toggled" />
+            </StackLayout>
             <Button x:Name="btnStart" HorizontalOptions="Center" VerticalOptions="End" Text="Start Listening" Clicked="btnStart_Clicked"/>
             <StackLayout Orientation="Horizontal" BackgroundColor="DarkBlue" HorizontalOptions="FillAndExpand" VerticalOptions="End">
                 <Label x:Name="lblIPAddress" HorizontalOptions="StartAndExpand" TextColor="White"/>
