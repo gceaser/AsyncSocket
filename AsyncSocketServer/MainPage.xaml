@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AsyncSocketServer.MainPage">
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill">
+        <!-- Place new controls here -->
+        <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Start">
+        <Label x:Name="lblMessageReceived" Text="Messages Received" HorizontalOptions="Center" VerticalOptions="Start" Margin="16,16,16,16"/>
+        <Label x:Name="txtMessageReceived" BackgroundColor="Black" TextColor="White" Text="" LineBreakMode="WordWrap" 
+               HorizontalOptions="Center" HeightRequest="200" WidthRequest="800" VerticalOptions="Start" Margin="16,8,16,8"/>
+        <Label x:Name="lblMessageSendBack" Text="Messages Returned" HorizontalOptions="Center" VerticalOptions="Start" Margin="16,16,16,16"/>
+        <Label x:Name="txtMessageSendBack" BackgroundColor="Black" TextColor="White" Text="" LineBreakMode="WordWrap"
+               HorizontalOptions="Center" HeightRequest="200" WidthRequest="800" VerticalOptions="Start" Margin="16,8,16,8"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="EndAndExpand">
+            <Button x:Name="btnStart" HorizontalOptions="Center" VerticalOptions="End" Text="Start Listening" Clicked="btnStart_Clicked"/>
+            <StackLayout Orientation="Horizontal" BackgroundColor="DarkBlue" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                <Label x:Name="lblIPAddress" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                <Label x:Name="lblPort" HorizontalOptions="EndAndExpand" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
